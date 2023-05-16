@@ -3,8 +3,6 @@ package it.itispaleocapa.bonacinagiorgio;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
-import java.time.*;
-import java.time.format.*;
 
 public class MembroPersonale
 {

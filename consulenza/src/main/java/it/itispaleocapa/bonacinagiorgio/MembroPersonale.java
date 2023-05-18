@@ -9,8 +9,7 @@ public abstract class MembroPersonale
     String nome;
     int annoAssunzione;
 
-    public MembroPersonale(String cognome, String nome)
-    {
+    public MembroPersonale(String cognome, String nome) {
         this.codice = produciCodice(cognome, nome);
         this.cognome = cognome;
         this.nome= nome;
@@ -29,5 +28,11 @@ public abstract class MembroPersonale
     {
         String nuovoIdentificativo = nome+cognome;
         return nuovoIdentificativo.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "MembroPersonale [codice=" + codice + ", cognome=" + cognome + ", nome=" + nome + ", annoAssunzione="
+                + annoAssunzione + "]";
     }
 }

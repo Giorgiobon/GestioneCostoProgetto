@@ -1,19 +1,17 @@
 package it.itispaleocapa.bonacinagiorgio;
 
 import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
 
-public class MembroPersonale
+public abstract class MembroPersonale
 {
     int codice;
     String cognome;
     String nome;
     int annoAssunzione;
 
-    public MembroPersonale(int codice, String cognome, String nome)
+    public MembroPersonale(String cognome, String nome)
     {
-        this.codice = codice;
+        this.codice = produciCodice(cognome, nome);
         this.cognome = cognome;
         this.nome= nome;
         Date x = new Date();
@@ -25,5 +23,11 @@ public class MembroPersonale
         Date x = new Date();
         int dataCorrente = x.getYear();
         return dataCorrente-this.annoAssunzione;
+    }
+
+    public int produciCodice(String cognome, String nome)
+    {
+        String nuovoIdentificativo = nome+cognome;
+        return nuovoIdentificativo.hashCode();
     }
 }

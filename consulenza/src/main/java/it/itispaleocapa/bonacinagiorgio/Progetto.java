@@ -1,6 +1,6 @@
 package it.itispaleocapa.bonacinagiorgio;
 
-public class main
+public class Progetto
 {
     public static void main()
     {

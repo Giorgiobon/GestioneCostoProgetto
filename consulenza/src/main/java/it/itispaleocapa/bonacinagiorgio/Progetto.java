@@ -16,8 +16,8 @@ public class Progetto
         membriProgetto.add(new Tecnico(cognome, nome, tipo));
     }
 
-    public void aggiungiDirigente(String cognome, String nome)
+    public void aggiungiDirigente(String nome, String cognome)
     {
-        membriProgetto.add(new Dirigente(cognome, nome))
+        membriProgetto.add(new Dirigente(cognome, nome));
     }
 }

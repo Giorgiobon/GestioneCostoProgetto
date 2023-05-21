@@ -5,9 +5,10 @@ public class Tecnico extends MembroPersonale
     public boolean areaCompetenza;// true = informatica/telecomunicazioni, false = elettronica/automazione
 
 
-    public Tecnico(String cognome, String nome, int tariffaOraria)
+    public Tecnico(String cognome, String nome, boolean tipo)
     {
         super(cognome, nome);
+        this.areaCompetenza =tipo;
     }
 
     public void setTariffaOraria(int valore1, int valore2)

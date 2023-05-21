@@ -2,8 +2,11 @@ package it.itispaleocapa.bonacinagiorgio;
 
 public class Tecnico extends MembroPersonale
 {
-    public Tecnico(String cognome, String nome, int tariffaOraria)
+    public String areaCompetenza="";
+
+    public Tecnico(String cognome, String nome, int tariffaOraria, String areaCompetenza)
     {
-        super(cognome, nome, tariffaOraria);
+        super(cognome, nome);
+        this.areaCompetenza = areaCompetenza;
     }
 }

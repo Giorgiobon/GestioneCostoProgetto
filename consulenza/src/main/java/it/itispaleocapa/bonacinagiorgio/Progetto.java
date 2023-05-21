@@ -15,22 +15,73 @@ public class Progetto
         this.oreProgetto = oreProgetto;
     }
 
-    public void aggiungiFunzionario(Funzionario x)
+    public void aggiungiFunzionario(Funzionario x) throws membroGiàEsistenteException
     {
+        Predicate <MembroPersonale> p = e ->{
+            if(e.nome == x.nome && e.cognome == x.cognome){
+                return true;
+            }else{
+                return false;
+            }
+        };
+
+        Consumer <MembroPersonale> c = e ->{
+            try {
+                throw new membroGiàEsistenteException();
+            } catch (membroGiàEsistenteException e1) {
+                e1.printStackTrace();
+            }
+        };
+
+        membriProgetto.stream().filter(p).forEach(c);
         membriProgetto.add(x);
     }
 
-    public void aggiungiTecnico(Tecnico x)
+    public void aggiungiTecnico(Tecnico x) throws membroGiàEsistenteException
     {
+        Predicate <MembroPersonale> p = e ->{
+            if(e.nome == x.nome && e.cognome == x.cognome){
+                return true;
+            }else{
+                return false;
+            }
+        };
+
+        Consumer <MembroPersonale> c = e ->{
+            try {
+                throw new membroGiàEsistenteException();
+            } catch (membroGiàEsistenteException e1) {
+                e1.printStackTrace();
+            }
+        };
+
+        membriProgetto.stream().filter(p).forEach(c);
         membriProgetto.add(x);
     }
 
-    public void aggiungiDirigente(Dirigente x)
+    public void aggiungiDirigente(Dirigente x) throws membroGiàEsistenteException
     {
+        Predicate <MembroPersonale> p = e ->{
+            if(e.nome == x.nome && e.cognome == x.cognome){
+                return false;
+            }else{
+                return true;
+            }
+        };
+
+        Consumer <MembroPersonale> c = e ->{
+            try {
+                throw new membroGiàEsistenteException();
+            } catch (membroGiàEsistenteException e1) {
+                e1.printStackTrace();
+            }
+        };
+
+        membriProgetto.stream().filter(p).forEach(c);
         membriProgetto.add(x);
     }
 
-    public int calcolaCostoProgetto()
+    public int calcolaCostoProgetto() throws membroGiàEsistenteException
     {
         this.costoProgetto = 0;
         Consumer <MembroPersonale> c = e ->{

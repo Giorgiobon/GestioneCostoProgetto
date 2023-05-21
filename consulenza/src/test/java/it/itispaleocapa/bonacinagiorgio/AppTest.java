@@ -12,25 +12,33 @@ class AppTest {
      * Rigorous Test.
      */
     @Test
-    void testAggiungiFunzionario() {
+    void testAggiungiFunzionario()  throws membroGiàEsistenteException{
         Progetto x = new Progetto(200);
         Funzionario y = new Funzionario("Bonacina", "Giorio", true);
         y.setTariffaOraria(10, 20);
-        x.aggiungiFunzionario(y);
+        try {
+            x.aggiungiFunzionario(y);
+        } catch (membroGiàEsistenteException e) {
+            throw new membroGiàEsistenteException();
+        }
         assertEquals(true, x.membriProgetto.contains(y));
     }
 
     @Test
-    void testAggiungiTecnico() {
+    void testAggiungiTecnico() throws membroGiàEsistenteException{
         Progetto x = new Progetto(200);
         Tecnico y = new Tecnico("Bonacina", "Giorio", true);
         y.setTariffaOraria(10, 20);
-        x.aggiungiTecnico(y);
+        try {
+            x.aggiungiTecnico(y);
+        } catch (membroGiàEsistenteException e){
+            throw new membroGiàEsistenteException();
+        }
         assertEquals(true, x.membriProgetto.contains(y));
     }
 
     @Test
-    void testAggiungiDirigente() {
+    void testAggiungiDirigente() throws membroGiàEsistenteException{
         Progetto x = new Progetto(200);
         Dirigente y = new Dirigente("Bonacina", "Giorio");
         y.setTariffaOraria(100);
@@ -39,22 +47,22 @@ class AppTest {
     }
 
     @Test
-    void testCalcolaCostoProgetto() {
+    void testCalcolaCostoProgetto() throws membroGiàEsistenteException{
         Progetto x = new Progetto(200);
 
         Funzionario y = new Funzionario("Bonacina", "Giorio", true);
         y.setTariffaOraria(10, 20);
         x.aggiungiFunzionario(y);
 
-        Funzionario z = new Funzionario("Bonacina", "Giorio", false);
+        Funzionario z = new Funzionario("Milani", "Luca", false);
         z.setTariffaOraria(10, 20);
         x.aggiungiFunzionario(z);
 
-        Tecnico ay = new Tecnico("Bonacina", "Giorio", true);
+        Tecnico ay = new Tecnico("Foglia", "Luca", true);
         ay.setTariffaOraria(10, 20);
         x.aggiungiTecnico(ay);
 
-        Dirigente b = new Dirigente("Bonacina", "Giorio");
+        Dirigente b = new Dirigente("RotaSperti", "Mario");
         b.setTariffaOraria(100);
         x.aggiungiDirigente(b);
 

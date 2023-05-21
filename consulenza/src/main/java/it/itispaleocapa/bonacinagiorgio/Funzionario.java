@@ -1,7 +1,5 @@
 package it.itispaleocapa.bonacinagiorgio;
 
-import java.util.*;
-
 public class Funzionario extends MembroPersonale
 {
 

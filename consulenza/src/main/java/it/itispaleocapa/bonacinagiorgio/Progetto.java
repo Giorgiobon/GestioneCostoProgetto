@@ -1,10 +1,19 @@
 package it.itispaleocapa.bonacinagiorgio;
 
 import java.util.*;
+import java.util.function.*;
 
 public class Progetto
 {
     public LinkedList<MembroPersonale> membriProgetto = new LinkedList<>();
+    public int oreProgetto;
+    public int costoProgetto;
+
+    public Progetto(int oreProgetto)
+    {
+        this.membriProgetto  = new LinkedList<>();
+        this.oreProgetto = oreProgetto;
+    }
 
     public void aggiungiFunzionario(String cognome, String nome, boolean tipo, int valore1, int valore2)
     {
@@ -25,5 +34,16 @@ public class Progetto
         Dirigente x = new Dirigente(cognome, nome);
         x.setTariffaOraria(valore1);
         membriProgetto.add(x);
+    }
+
+    public int calcolaCostoProgetto()
+    {
+        this.costoProgetto = 0;
+        Consumer <MembroPersonale> c = e ->{
+            costoProgetto += e.tariffaOraria*oreProgetto;
+        };
+
+        membriProgetto.stream().forEach(c);
+        return costoProgetto;
     }
 }

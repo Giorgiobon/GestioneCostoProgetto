@@ -1,12 +1,23 @@
 package it.itispaleocapa.bonacinagiorgio;
 
+import java.util.*;
+
 public class Tecnico extends MembroPersonale
 {
-    public String areaCompetenza="";
+    public boolean areaCompetenza;// true = informatica/telecomunicazioni, false = elettronica/automazione
 
-    public Tecnico(String cognome, String nome, int tariffaOraria, String areaCompetenza)
+
+    public Tecnico(String cognome, String nome, int tariffaOraria)
     {
         super(cognome, nome);
-        this.areaCompetenza = areaCompetenza;
+    }
+
+    public void setTariffaOraria(int valore1, int valore2)
+    {
+        if(!areaCompetenza){
+            this.tariffaOraria = valore1;
+        }else{
+            this.tariffaOraria = valore2;
+        }
     }
 }

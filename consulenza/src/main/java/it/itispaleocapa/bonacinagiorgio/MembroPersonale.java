@@ -14,8 +14,7 @@ public abstract class MembroPersonale
         this.codice = produciCodice(cognome, nome);
         this.cognome = cognome;
         this.nome= nome;
-        Date x = new Date();
-        this.annoAssunzione = x.getYear();
+        
     }
 
     public int calcolaTempoTrascorsoAssunzione()

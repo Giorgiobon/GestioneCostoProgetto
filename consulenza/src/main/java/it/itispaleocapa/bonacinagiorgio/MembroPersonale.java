@@ -10,7 +10,7 @@ public abstract class MembroPersonale
     int annoAssunzione;
     int tariffaOraria;
 
-    public MembroPersonale(String cognome, String nome, int tariffaOraria;) {
+    public MembroPersonale(String cognome, String nome, int tariffaOraria) {
         this.codice = produciCodice(cognome, nome);
         this.cognome = cognome;
         this.nome= nome;

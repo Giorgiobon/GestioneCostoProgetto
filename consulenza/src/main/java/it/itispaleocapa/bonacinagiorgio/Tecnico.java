@@ -1,7 +1,5 @@
 package it.itispaleocapa.bonacinagiorgio;
 
-import java.util.*;
-
 public class Tecnico extends MembroPersonale
 {
     public boolean areaCompetenza;// true = informatica/telecomunicazioni, false = elettronica/automazione

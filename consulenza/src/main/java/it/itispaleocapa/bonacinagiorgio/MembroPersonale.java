@@ -33,6 +33,6 @@ public abstract class MembroPersonale
     @Override
     public String toString() {
         return "MembroPersonale [codice=" + codice + ", cognome=" + cognome + ", nome=" + nome + ", annoAssunzione="
-                + annoAssunzione + "]";
+                + annoAssunzione + ", tariffaOraria=" + tariffaOraria +"]";
     }
 }

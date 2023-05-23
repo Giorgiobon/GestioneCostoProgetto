@@ -19,4 +19,10 @@ public class Tecnico extends MembroPersonale
             this.tariffaOraria = valore2;
         }
     }
+
+    @Override
+    public String toString()
+    {
+        return "Tecnico: " + super.toString() + " area competenza: "+areaCompetenza;
+    }
 }

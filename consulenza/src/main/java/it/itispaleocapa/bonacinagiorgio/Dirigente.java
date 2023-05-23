@@ -12,4 +12,10 @@ public class Dirigente extends MembroPersonale
     {
         this.tariffaOraria = valore1;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Dirigente: " + super.toString();
+    }
 }

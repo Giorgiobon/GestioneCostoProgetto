@@ -14,7 +14,6 @@ public abstract class MembroPersonale
         this.codice = produciCodice(cognome, nome);
         this.cognome = cognome;
         this.nome= nome;
-        
     }
 
     public int calcolaTempoTrascorsoAssunzione()

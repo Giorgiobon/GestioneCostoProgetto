@@ -19,5 +19,11 @@ public class Funzionario extends MembroPersonale
             this.tariffaOraria = valore2;
         }
     }
+
+    @Override
+    public String toString()
+    {
+        return "Funzionario: " + super.toString()+ " tipo: "+tipo;
+    }
     
 }
